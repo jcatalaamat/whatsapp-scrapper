@@ -4,8 +4,8 @@ services:
     env: node
     region: oregon
     plan: starter
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: yarn install
+    startCommand: yarn start
     healthCheckPath: /
     envVars:
       - key: NODE_ENV

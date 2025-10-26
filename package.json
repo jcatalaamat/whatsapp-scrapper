@@ -11,13 +11,14 @@
     "migrate:up": "node-pg-migrate up",
     "migrate:down": "node-pg-migrate down",
     "migrate:create": "node-pg-migrate create",
-    "db:setup": "npm run migrate:up && echo '✅ Database setup complete'",
-    "db:reset": "npm run migrate:down && npm run migrate:up && echo '✅ Database reset complete'",
+    "db:setup": "yarn migrate:up && echo '✅ Database setup complete'",
+    "db:reset": "yarn migrate:down && yarn migrate:up && echo '✅ Database reset complete'",
     "deploy": "git push origin main && echo '🚀 Deploying to Render...'",
     "logs": "echo '📋 Open Render dashboard to view logs: https://dashboard.render.com'",
     "test:db": "node -e \"import('./src/supabase-client.js').then(m => m.testConnection())\"",
-    "check": "npm run test:db && echo '✅ All checks passed'"
+    "check": "yarn test:db && echo '✅ All checks passed'"
   },
+  "packageManager": "yarn@1.22.19",
   "keywords": [
     "whatsapp",
     "listener",

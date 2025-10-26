@@ -75,8 +75,8 @@ Fill in the following settings:
 | **Branch** | `main` |
 | **Root Directory** | Leave blank |
 | **Runtime** | Node |
-| **Build Command** | `npm install` |
-| **Start Command** | `npm start` |
+| **Build Command** | `yarn install` |
+| **Start Command** | `yarn start` |
 | **Instance Type** | **Free** (for testing) or **Starter** ($7/month for 24/7) |
 
 ### 3.3 Add Environment Variables
@@ -178,7 +178,7 @@ When you make changes locally:
 # Make your changes
 git add .
 git commit -m "Your change description"
-npm run deploy  # This pushes to GitHub, triggering Render deploy
+yarn deploy  # This pushes to GitHub, triggering Render deploy
 ```
 
 Or manually:
@@ -192,7 +192,7 @@ Render will automatically redeploy on every push to `main`.
 ### View Logs
 
 ```bash
-npm run logs
+yarn logs
 ```
 
 Or visit: `https://dashboard.render.com/web/YOUR_SERVICE_ID/logs`
@@ -206,7 +206,7 @@ If you add new database migrations:
 
 Or manually via Render Shell:
 1. Go to your service → **Shell** tab
-2. Run: `npm run migrate:up`
+2. Run: `yarn migrate:up`
 
 ### Restart Service
 
@@ -258,7 +258,7 @@ Free tier has no persistent disk storage.
 **Fix:**
 - Check your `package.json` is valid
 - Ensure all dependencies are in `dependencies`, not `devDependencies`
-- Try locally: `npm install && npm start`
+- Try locally: `yarn install && yarn start`
 
 ### QR Code Not Appearing
 
@@ -313,19 +313,19 @@ Free tier has no persistent disk storage.
 
 ```bash
 # Deploy to Render (pushes to GitHub)
-npm run deploy
+yarn deploy
 
 # Test database connection
-npm run check
+yarn check
 
 # View logs
-npm run logs
+yarn logs
 
 # Setup database (run migrations)
-npm run db:setup
+yarn db:setup
 
 # Reset database (careful!)
-npm run db:reset
+yarn db:reset
 ```
 
 ---

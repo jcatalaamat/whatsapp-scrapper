@@ -71,7 +71,7 @@ Admin reviews and approves in main app
 ```bash
 git clone <your-repo-url>
 cd whatsapp-scrapper
-npm install
+yarn install
 ```
 
 ### 2. Configure Environment
@@ -97,7 +97,7 @@ SUPABASE_STORAGE_BUCKET=whatsapp-media
 ### 3. Run Database Migrations
 
 ```bash
-npm run migrate:up
+yarn migrate:up
 ```
 
 This creates two tables:
@@ -107,7 +107,7 @@ This creates two tables:
 ### 4. Start the Service
 
 ```bash
-npm start
+yarn start
 ```
 
 ### 5. Scan QR Code
@@ -138,8 +138,8 @@ git push origin main
 4. Configure:
    - **Name:** `mazunte-whatsapp-listener`
    - **Environment:** Node
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
+   - **Build Command:** `yarn install`
+   - **Start Command:** `yarn start`
    - **Instance Type:** Starter (free tier works, but paid tier recommended for 24/7 uptime)
 
 ### 3. Set Environment Variables in Render
