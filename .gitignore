@@ -101,6 +101,11 @@ group_media/
 media/
 downloads/
 
+# Local data files (JSON exports, CSV exports)
+data/*.json
+data/*.csv
+data/export.*
+
 # Temporary files
 tmp/
 temp/

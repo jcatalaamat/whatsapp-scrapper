@@ -4,6 +4,7 @@
  */
 
 import { insertMessage } from './supabase-client.js';
+import { insertMessageLocal } from './local-storage.js';
 import {
   processMedia,
   shouldCaptureMessage,
@@ -12,6 +13,9 @@ import {
   getMessageType,
 } from './media-handler.js';
 import config from './config.js';
+
+// Check if we're in local mode
+const isLocalMode = process.env.LOCAL_MODE === 'true';
 
 /**
  * Get sender information from WhatsApp message
@@ -115,8 +119,12 @@ export async function handleMessage(message, chat) {
       metadata: metadata || {},
     };
 
-    // Insert into database
-    await insertMessage(messageData);
+    // Insert into appropriate storage backend
+    if (isLocalMode) {
+      await insertMessageLocal(messageData);
+    } else {
+      await insertMessage(messageData);
+    }
 
     // Log success
     const preview = message.body
@@ -138,8 +146,15 @@ export function startStatsLogger(intervalMs = 3600000) {
   // Default: every hour
   setInterval(async () => {
     try {
-      const { getMessageStats } = await import('./supabase-client.js');
-      const stats = await getMessageStats();
+      let stats;
+
+      if (isLocalMode) {
+        const { getMessageStatsLocal } = await import('./local-storage.js');
+        stats = await getMessageStatsLocal();
+      } else {
+        const { getMessageStats } = await import('./supabase-client.js');
+        stats = await getMessageStats();
+      }
 
       console.log('\n📊 Message Statistics:');
       console.log(`   Total messages: ${stats.total}`);
