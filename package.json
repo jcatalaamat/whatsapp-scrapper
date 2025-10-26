@@ -1,0 +1,44 @@
+{
+  "name": "whatsapp-listener",
+  "version": "1.0.0",
+  "description": "WhatsApp group listener for Mazunte Connect - captures messages and media from community groups",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "NODE_ENV=development node src/index.js",
+    "migrate": "node-pg-migrate",
+    "migrate:up": "node-pg-migrate up",
+    "migrate:down": "node-pg-migrate down",
+    "migrate:create": "node-pg-migrate create",
+    "db:setup": "npm run migrate:up && echo '✅ Database setup complete'",
+    "db:reset": "npm run migrate:down && npm run migrate:up && echo '✅ Database reset complete'",
+    "deploy": "git push origin main && echo '🚀 Deploying to Render...'",
+    "logs": "echo '📋 Open Render dashboard to view logs: https://dashboard.render.com'",
+    "test:db": "node -e \"import('./src/supabase-client.js').then(m => m.testConnection())\"",
+    "check": "npm run test:db && echo '✅ All checks passed'"
+  },
+  "keywords": [
+    "whatsapp",
+    "listener",
+    "mazunte",
+    "community",
+    "supabase"
+  ],
+  "author": "Mazunte Connect",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "whatsapp-web.js": "^1.23.0",
+    "qrcode-terminal": "^0.12.0",
+    "dotenv": "^16.3.1",
+    "node-pg-migrate": "^6.2.2",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
