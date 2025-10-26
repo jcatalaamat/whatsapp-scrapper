@@ -47,14 +47,15 @@ function displayHeader() {
 async function displayMainMenu() {
   console.log('\n📋 What would you like to do?\n');
   console.log('  1. 🚀 Start Live Mode (monitor new messages → Supabase)');
-  console.log('  2. 📚 Start Backfill Mode (fetch old messages first, then monitor)');
-  console.log('  3. 🧪 Start Local Test Mode (save to JSON file, no database)');
-  console.log('  4. ⚙️  Configure Settings (.env file)');
-  console.log('  5. 📊 View Current Configuration');
-  console.log('  6. ❌ Exit');
+  console.log('  2. 📚 Start Backfill Mode (fetch old messages first → Supabase, then monitor)');
+  console.log('  3. 🧪 Start Local Test Mode (monitor new messages → JSON file)');
+  console.log('  4. 📚🧪 Start Local Backfill Mode (fetch old messages → JSON file, then monitor)');
+  console.log('  5. ⚙️  Configure Settings (.env file)');
+  console.log('  6. 📊 View Current Configuration');
+  console.log('  7. ❌ Exit');
   console.log('');
 
-  const choice = await ask('Enter your choice (1-6): ');
+  const choice = await ask('Enter your choice (1-7): ');
   return choice;
 }
 
@@ -278,6 +279,46 @@ async function startLocalTestMode() {
 }
 
 /**
+ * Start local backfill mode
+ */
+async function startLocalBackfillMode() {
+  console.log('\n' + '='.repeat(80));
+  console.log('📚🧪 STARTING LOCAL BACKFILL MODE');
+  console.log('='.repeat(80));
+  console.log('\n✅ Local backfill mode will:');
+  console.log('   1. Fetch historical messages from your groups');
+  console.log('   2. Save them to a local JSON file');
+  console.log('   3. Then start monitoring for new messages');
+  console.log('   4. NOT touch the Supabase database');
+
+  const env = readEnvFile();
+  const limit = await ask(`\nHow many messages to fetch per group? [${env.BACKFILL_MESSAGE_LIMIT || '100'}]: `);
+  const messageLimit = limit || env.BACKFILL_MESSAGE_LIMIT || '100';
+
+  const outputFile = env.LOCAL_OUTPUT_FILE || './data/messages.json';
+  console.log(`\n💾 Messages will be saved to: ${outputFile}`);
+
+  const confirm = await ask(`\n▶️  Fetch up to ${messageLimit} messages per group to JSON file? (yes/no): `);
+
+  if (confirm.toLowerCase() === 'yes') {
+    rl.close();
+    updateEnvFile({
+      OPERATION_MODE: 'local_backfill',
+      LOCAL_MODE: 'true',
+      BACKFILL_ENABLED: 'true',
+      BACKFILL_ON_STARTUP: 'true',
+      BACKFILL_MESSAGE_LIMIT: messageLimit,
+    });
+    console.log('\n🚀 Launching local backfill mode...\n');
+
+    // Import and start the main service
+    const { default: startService } = await import('./index.js');
+  } else {
+    console.log('\n❌ Cancelled');
+  }
+}
+
+/**
  * Main wizard function
  */
 export async function runWizard() {
@@ -305,14 +346,19 @@ export async function runWizard() {
         break;
 
       case '4':
-        await configureSettings();
+        await startLocalBackfillMode();
+        running = false;
         break;
 
       case '5':
-        await viewConfiguration();
+        await configureSettings();
         break;
 
       case '6':
+        await viewConfiguration();
+        break;
+
+      case '7':
         console.log('\n👋 Goodbye!\n');
         rl.close();
         running = false;
@@ -320,7 +366,7 @@ export async function runWizard() {
         break;
 
       default:
-        console.log('\n❌ Invalid choice. Please enter 1-6.');
+        console.log('\n❌ Invalid choice. Please enter 1-7.');
     }
   }
 }

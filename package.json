@@ -9,6 +9,7 @@
     "wizard": "node src/wizard.js",
     "dev": "NODE_ENV=development node src/index.js",
     "local": "LOCAL_MODE=true node src/index.js",
+    "local:backfill": "LOCAL_MODE=true BACKFILL_ENABLED=true BACKFILL_ON_STARTUP=true node src/index.js",
     "backfill": "BACKFILL_ENABLED=true BACKFILL_ON_STARTUP=true node src/index.js",
     "export": "node -e \"import('./src/export-csv.js').then(m => m.exportToCSV('./data/export.csv', true))\"",
     "migrate": "node-pg-migrate",
