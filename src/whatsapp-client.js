@@ -49,12 +49,44 @@ export function initializeClient() {
 function setupEventHandlers() {
   // QR Code event
   client.on('qr', (qr) => {
-    console.log('\n📱 Scan this QR code with WhatsApp on your phone:');
-    console.log('   Settings → Linked Devices → Link a Device\n');
-    qrcode.generate(qr, { small: true });
-    console.log('\n💡 Or copy this string and paste into https://qrcode.show:');
-    console.log(qr);
-    console.log('');
+    console.log('\n' + '='.repeat(80));
+    console.log('📱 WHATSAPP QR CODE - SCAN WITH YOUR PHONE');
+    console.log('='.repeat(80));
+
+    // Check if user wants link-only mode (no ASCII QR)
+    const forceLinkOnly = process.env.FORCE_LINK_ONLY === 'true';
+
+    if (forceLinkOnly) {
+      console.log('\n⚠️  Terminal QR display is disabled (FORCE_LINK_ONLY=true)');
+      console.log('\n❌ Note: qrcode.show does NOT work with WhatsApp authentication codes');
+      console.log('✅ To see the QR code, set FORCE_LINK_ONLY=false in your .env file\n');
+      console.log('💡 QR Code will refresh in 20 seconds...\n');
+    } else {
+      // Display instructions
+      console.log('\n📱 HOW TO SCAN:');
+      console.log('   1. Open WhatsApp on your phone');
+      console.log('   2. Tap Menu (⋮) or Settings');
+      console.log('   3. Tap "Linked Devices"');
+      console.log('   4. Tap "Link a Device"');
+      console.log('   5. Point your phone at the QR code below\n');
+
+      console.log('='.repeat(80));
+      console.log('👇 SCAN THIS QR CODE WITH WHATSAPP ON YOUR PHONE:');
+      console.log('='.repeat(80) + '\n');
+
+      try {
+        // Generate ASCII QR code
+        qrcode.generate(qr, { small: true });
+      } catch (error) {
+        console.log('[ERROR] Failed to generate QR code:', error.message);
+        console.log('⚠️  Your terminal may not support QR code display');
+        console.log('💡 Try setting FORCE_LINK_ONLY=true in .env and restart\n');
+      }
+
+      console.log('\n' + '='.repeat(80));
+      console.log('💡 QR Code will refresh in 20 seconds...');
+      console.log('💡 Make sure to scan it before it refreshes!\n');
+    }
   });
 
   // Ready event

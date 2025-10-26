@@ -4,7 +4,7 @@
  * Solves Render's ephemeral storage issue
  */
 
-import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync, mkdirSync, unlinkSync } from 'fs';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -63,8 +63,7 @@ function loadLocalSession() {
  */
 function deleteLocalSession() {
   if (hasLocalSession()) {
-    const fs = await import('fs');
-    fs.unlinkSync(SESSION_FILE);
+    unlinkSync(SESSION_FILE);
     console.log('🗑️  Local session deleted');
   }
 }
@@ -140,7 +139,7 @@ export async function clearSession() {
     await deleteSession(sessionId);
 
     // Delete local
-    await deleteLocalSession();
+    deleteLocalSession();
 
     console.log('✅ Session cleared');
   } catch (error) {
