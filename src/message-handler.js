@@ -26,8 +26,16 @@ async function getSenderInfo(message) {
   try {
     const contact = await message.getContact();
 
+    // Try multiple sources for the display name
+    const displayName = contact.pushname
+      || contact.name
+      || contact.verifiedName
+      || contact.shortName
+      || contact.number
+      || 'Unknown';
+
     return {
-      senderName: contact.pushname || contact.name || contact.number || 'Unknown',
+      senderName: displayName,
       senderPhone: message.from,
     };
   } catch (error) {

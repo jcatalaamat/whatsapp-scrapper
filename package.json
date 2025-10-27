@@ -14,6 +14,14 @@
     "sessions:list": "node -e \"import('./src/local-storage.js').then(async m => { const files = await m.listSessionFiles(); console.log('\\\\n📁 Session Files:\\\\n'); files.forEach((f,i) => console.log(`   ${i+1}. ${f.filename} (${f.messageCount} messages) - ${f.sessionDate}`)); })\"",
     "export": "node -e \"import('./src/export-csv.js').then(m => m.exportToCSV('./data/export.csv', true))\"",
     "export:enhanced": "node -e \"import('./src/export-enhanced-csv.js').then(m => m.exportToEnhancedCSV('./data/export-enhanced.csv', true))\"",
+    "extract:sample": "node scripts/extraction/extract-entities-ai-sample.js",
+    "extract:full": "node scripts/extraction/extract-entities-ai.js",
+    "extract:link-media": "node scripts/extraction/link-media-to-entities.js",
+    "extract:dedupe": "node scripts/extraction/deduplicate-entities.js",
+    "extract:set-profile": "node scripts/extraction/set-profile-id.js",
+    "extract:add-coords": "node scripts/extraction/add-coordinates.js",
+    "extract:sql": "node scripts/extraction/generate-sql-inserts.js",
+    "extract:clean": "rm -rf data/outputs/full data/outputs/samples/latest && echo '🧹 Cleaned extraction outputs'",
     "migrate": "node-pg-migrate",
     "migrate:up": "node-pg-migrate up",
     "migrate:down": "node-pg-migrate down",
@@ -36,12 +44,14 @@
   "author": "Mazunte Connect",
   "license": "MIT",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.67.0",
     "@supabase/supabase-js": "^2.39.0",
-    "whatsapp-web.js": "^1.23.0",
-    "qrcode-terminal": "^0.12.0",
     "dotenv": "^16.3.1",
     "node-pg-migrate": "^6.2.2",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "qrcode-terminal": "^0.12.0",
+    "uuid": "^13.0.0",
+    "whatsapp-web.js": "^1.23.0"
   },
   "devDependencies": {
     "eslint": "^8.55.0"

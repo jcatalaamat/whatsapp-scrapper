@@ -1,0 +1,398 @@
+[
+  {
+    "name": "Punta Cometa",
+    "aliases": ["Cerro Sagrado", "Punta Cometa (Cerro Sagrado)"],
+    "type": "viewpoint",
+    "lat": 15.6580689,
+    "lng": -96.5565018,
+    "description": "Southernmost point of Oaxaca state, dramatic peninsula with 180° ocean views. Popular sunset viewing spot.",
+    "address": "20-30 min hike from Mazunte town center"
+  },
+  {
+    "name": "Playa Rinconcito",
+    "aliases": ["Rinconcito", "Rinconcito Beach"],
+    "type": "beach",
+    "lat": 15.6680,
+    "lng": -96.5520,
+    "description": "Primary beach in Mazunte. Golden sand, calm waters, perfect for swimming. Main social hub with restaurants.",
+    "address": "Playa Rinconcito, Mazunte"
+  },
+  {
+    "name": "Playa Mazunte",
+    "aliases": ["Mazunte Beach", "Main Beach"],
+    "type": "beach",
+    "lat": 15.6690,
+    "lng": -96.5505,
+    "description": "The local/quieter beach, less crowded. About 1km long crescent bay. Good for yoga retreats.",
+    "address": "Playa Mazunte, Mazunte"
+  },
+  {
+    "name": "Playa Mermejita",
+    "aliases": ["Mermejita Beach", "Mermejita"],
+    "type": "beach",
+    "lat": 15.6600,
+    "lng": -96.5650,
+    "description": "Wild, undeveloped beach with black sand. Popular for surfing. Turtle nesting grounds.",
+    "address": "20-30 min walk from Mazunte town center"
+  },
+  {
+    "name": "Centro Mexicano de la Tortuga",
+    "aliases": ["Mexican Turtle Center", "Turtle Center"],
+    "type": "museum",
+    "lat": 15.6665761,
+    "lng": -96.5519087,
+    "description": "Sea turtle conservation center. Features outdoor tanks with different turtle species.",
+    "address": "Mazunte, Oaxaca"
+  },
+  {
+    "name": "Mazunte Center",
+    "aliases": ["Town Center", "Centro de Mazunte"],
+    "type": "landmark",
+    "lat": 15.667729,
+    "lng": -96.554518,
+    "description": "Main town center of Mazunte",
+    "address": "Centro, Mazunte"
+  },
+  {
+    "name": "Hridaya Yoga",
+    "aliases": ["Hridaya", "Hridaya Yoga Center"],
+    "type": "venue",
+    "lat": 15.6680,
+    "lng": -96.5545,
+    "description": "Popular yoga studio and retreat center with multiple halls (Nitya, Anugraha)",
+    "address": "Mazunte, Oaxaca"
+  },
+  {
+    "name": "Meditation Station",
+    "aliases": ["Estación de Meditación", "Meditation Station / Estación de Meditación"],
+    "type": "venue",
+    "lat": 15.6685,
+    "lng": -96.5542,
+    "description": "Wellness center offering meditation, yoga, and workshop space",
+    "address": "Mazunte, Oaxaca"
+  },
+  {
+    "name": "Bliss Haven",
+    "aliases": ["Bliss Haven Mazunte"],
+    "type": "venue",
+    "lat": 15.6675,
+    "lng": -96.5548,
+    "description": "Wellness center and event space",
+    "address": "Mazunte, Oaxaca"
+  },
+  {
+    "name": "Semanawak Temazcal & Yoga",
+    "aliases": ["Semanawak"],
+    "type": "venue",
+    "lat": 15.666805,
+    "lng": -96.5540,
+    "description": "Temazcal (sauna) and yoga classes",
+    "address": "Av. Paseo del Mazunte, Mazunte"
+  },
+  {
+    "name": "Solstice Yoga Center",
+    "aliases": ["Solstice Yoga"],
+    "type": "venue",
+    "lat": 15.6685,
+    "lng": -96.5543,
+    "description": "Yoga studio offering classes and instruction",
+    "address": "Mazunte, Oaxaca"
+  },
+  {
+    "name": "Aquadanza",
+    "aliases": [],
+    "type": "venue",
+    "lat": 15.6675,
+    "lng": -96.5550,
+    "description": "Ecstatic dance and movement classes",
+    "address": "Sendero del Agua, Mazunte"
+  },
+  {
+    "name": "Holistic Center",
+    "aliases": [],
+    "type": "venue",
+    "lat": 15.6688,
+    "lng": -96.5538,
+    "description": "Various healing therapies: craniosacral, massage, ceremonies",
+    "address": "Top of Calle Rinconcito, Mazunte"
+  },
+  {
+    "name": "Cometa Café",
+    "aliases": ["Cometa", "Cometa Coffee"],
+    "type": "restaurant",
+    "lat": 15.6685,
+    "lng": -96.5522,
+    "description": "Best coffee on Oaxaca coast. Good WiFi and working space",
+    "address": "Main Road, Rinconcito area"
+  },
+  {
+    "name": "El Armadillo",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6682,
+    "lng": -96.5521,
+    "description": "Moroccan-inspired cuisine. Vegetarian options",
+    "address": "Callejón El Armadillo 1, Rinconcito"
+  },
+  {
+    "name": "La Tertulia",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6680,
+    "lng": -96.5520,
+    "description": "Beachfront restaurant. Famous for shrimp tacos and fresh sushi",
+    "address": "Beachfront, Playa Rinconcito"
+  },
+  {
+    "name": "DOBA",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6685,
+    "lng": -96.5540,
+    "description": "Creative healthy dishes, smoothies, salads. Organic ingredients",
+    "address": "Main area, Mazunte"
+  },
+  {
+    "name": "Luz del Sol",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6670,
+    "lng": -96.5535,
+    "description": "Vegan/vegetarian cafe. Veggie breakfasts and lunches",
+    "address": "Near Centro Mexicano, Mazunte"
+  },
+  {
+    "name": "La Empanada",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6686,
+    "lng": -96.5540,
+    "description": "Pizzeria and pasta. Open 4pm-11pm",
+    "address": "Main Road, Mazunte"
+  },
+  {
+    "name": "Tribu Mazunte",
+    "aliases": ["Tribu"],
+    "type": "restaurant",
+    "lat": 15.6683,
+    "lng": -96.5522,
+    "description": "Gourmet tacos, vegan/veggie options, bowls, pastas",
+    "address": "Rinconcito area"
+  },
+  {
+    "name": "Umami Cafe",
+    "aliases": ["Umami"],
+    "type": "restaurant",
+    "lat": 15.6684,
+    "lng": -96.5541,
+    "description": "Healthy dishes, smoothies. Starlink WiFi",
+    "address": "Main area, Mazunte"
+  },
+  {
+    "name": "El Gecko",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6685,
+    "lng": -96.5540,
+    "description": "Smoothies and juices. Good for co-working",
+    "address": "Main area, Mazunte"
+  },
+  {
+    "name": "El Tiburón Juice Bar",
+    "aliases": ["El Tiburón"],
+    "type": "restaurant",
+    "lat": 15.6681,
+    "lng": -96.5522,
+    "description": "Fresh smoothies, juices, açai bowls",
+    "address": "Rinconcito, Mazunte"
+  },
+  {
+    "name": "Casa Davan Bistro",
+    "aliases": ["Casa Davan"],
+    "type": "restaurant",
+    "lat": 15.6686,
+    "lng": -96.5540,
+    "description": "Great menu, sandwiches, poke bowls. Starlink WiFi",
+    "address": "Main area, Mazunte"
+  },
+  {
+    "name": "Falafel el Loco",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6682,
+    "lng": -96.5522,
+    "description": "Falafel and Mediterranean cuisine",
+    "address": "Rinconcito area"
+  },
+  {
+    "name": "Jardin De Sabores",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6685,
+    "lng": -96.5541,
+    "description": "Poke bowls and healthy options",
+    "address": "Main area, Mazunte"
+  },
+  {
+    "name": "Antojitos La China",
+    "aliases": ["La China"],
+    "type": "restaurant",
+    "lat": 15.6686,
+    "lng": -96.5539,
+    "description": "Mexican street food and antojitos",
+    "address": "Main Road, Mazunte"
+  },
+  {
+    "name": "Cenzontle",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6682,
+    "lng": -96.5523,
+    "description": "Hamburgers and craft beers. Also offers art classes",
+    "address": "Calle Rinconcito, Mazunte"
+  },
+  {
+    "name": "Cosméticos Naturales de Mazunte",
+    "aliases": ["El Milagro de Mazunte"],
+    "type": "shop",
+    "lat": 15.6668,
+    "lng": -96.5538,
+    "description": "100% natural cosmetics cooperative. Shampoos, soaps, oils",
+    "address": "Av. Paseo del Mazunte, Esq. Ocotillo"
+  },
+  {
+    "name": "Yu'gupa",
+    "aliases": [],
+    "type": "shop",
+    "lat": 15.6688,
+    "lng": -96.5540,
+    "description": "Health food market. Superfoods, organic greens, vegan treats",
+    "address": "Main Road, Mazunte"
+  },
+  {
+    "name": "DaVan Mystique Boutique",
+    "aliases": ["DaVan"],
+    "type": "shop",
+    "lat": 15.6682,
+    "lng": -96.5522,
+    "description": "Clothing, handmade jewelry, natural skincare",
+    "address": "Rinconcito area"
+  },
+  {
+    "name": "SOMA Alquimía & Arte",
+    "aliases": ["SOMA"],
+    "type": "shop",
+    "lat": 15.6685,
+    "lng": -96.5541,
+    "description": "Handmade items, art, local crafts",
+    "address": "Main area, Mazunte"
+  },
+  {
+    "name": "Hotel Noga",
+    "aliases": ["Noga"],
+    "type": "accommodation",
+    "lat": 15.6675,
+    "lng": -96.5530,
+    "description": "Hotel in Zipolite area. Hosts yoga and wellness events",
+    "address": "Zipolite"
+  },
+  {
+    "name": "Posada del Arquitecto",
+    "aliases": [],
+    "type": "accommodation",
+    "lat": 15.6678,
+    "lng": -96.5540,
+    "description": "Popular accommodation and event venue",
+    "address": "Mazunte, Oaxaca"
+  },
+  {
+    "name": "Casa Corzo",
+    "aliases": [],
+    "type": "venue",
+    "lat": 15.6682,
+    "lng": -96.5538,
+    "description": "Event and yoga venue",
+    "address": "Mazunte, Oaxaca"
+  },
+  {
+    "name": "Foro Escénico Alternativo Mermejita",
+    "aliases": ["Mermejita", "Foro Mermejita"],
+    "type": "venue",
+    "lat": 15.6602,
+    "lng": -96.5648,
+    "description": "Alternative scenic forum/performance space for dance and movement",
+    "address": "Near Playa Mermejita, Mazunte"
+  },
+  {
+    "name": "Musicalli",
+    "aliases": [],
+    "type": "venue",
+    "lat": 15.6692,
+    "lng": -96.5510,
+    "description": "Music studio/venue on dirt road between Mazunte and Ventanilla",
+    "address": "Calle Cantares n7 (Calle Agua de Luna), Mazunte"
+  },
+  {
+    "name": "El Chiringuito",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6678,
+    "lng": -96.5525,
+    "description": "Beachfront restaurant and bar",
+    "address": "Mazunte, Oaxaca"
+  },
+  {
+    "name": "Wamba",
+    "aliases": [],
+    "type": "restaurant",
+    "lat": 15.6683,
+    "lng": -96.5528,
+    "description": "Restaurant with Sunday dance sessions (bailación)",
+    "address": "Mazunte, Oaxaca"
+  },
+  {
+    "name": "La Galera",
+    "aliases": [],
+    "type": "venue",
+    "lat": 15.6655,
+    "lng": -96.5215,
+    "description": "Dance and event venue in Zipolite",
+    "address": "Zipolite"
+  },
+  {
+    "name": "Kinam",
+    "aliases": ["Kinam Mazunte"],
+    "type": "venue",
+    "lat": 15.6670,
+    "lng": -96.5545,
+    "description": "Event and workshop venue",
+    "address": "Al lado de Posada la Huerta, Camino Al Alguaje S/N, Mazunte"
+  },
+  {
+    "name": "Camp",
+    "aliases": ["Camp Zipolite"],
+    "type": "venue",
+    "lat": 15.6658,
+    "lng": -96.5220,
+    "description": "Event and gathering space in Zipolite",
+    "address": "Zipolite"
+  },
+  {
+    "name": "San Agustinillo",
+    "aliases": [],
+    "type": "town",
+    "lat": 15.6630,
+    "lng": -96.5380,
+    "description": "Nearby beach town east of Mazunte",
+    "address": "San Agustinillo, Oaxaca"
+  },
+  {
+    "name": "Zipolite",
+    "aliases": [],
+    "type": "town",
+    "lat": 15.6655,
+    "lng": -96.5210,
+    "description": "Nearby beach town west of Mazunte. Famous for its nudist beach",
+    "address": "Zipolite, Oaxaca"
+  }
+]

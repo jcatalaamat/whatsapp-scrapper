@@ -1,0 +1,615 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440004",
+    "name": "Musicalli",
+    "type": "studio",
+    "category": "music",
+    "description": "Music studio/venue located on Calle Cantares (also known as Calle Agua de Luna) between Mazunte and Ventanilla. Light red house with dogs.",
+    "location_name": "Calle Cantares n7, Mazunte (between Mazunte and Ventanilla)",
+    "lat": 15.6692,
+    "lng": -96.551,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": "393332024184",
+    "contact_whatsapp": "393332024184",
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "music",
+      "studio",
+      "venue",
+      "dirt road",
+      "km 6 sign"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531513364_id5cshdr0",
+    "_links": [
+      "https://maps.app.goo.gl/3UVFYRYm9awHMXFs8"
+    ],
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531549452_1761531549452_pnboan.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Musicalli"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440005",
+    "name": "Foro Escénico Alternativo Mermejita",
+    "type": "venue",
+    "category": "art",
+    "description": "Alternative scenic forum/performance space for dance and movement classes",
+    "location_name": "Mazunte",
+    "lat": 15.6602,
+    "lng": -96.5648,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "dance",
+      "performance",
+      "classes",
+      "movement",
+      "venue"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531514745_954whe9mm",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531513478_1761531513478_ieyrt2.jpg",
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531548646_1761531548646_2op2nr.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Foro Escénico Alternativo Mermejita"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440006",
+    "name": "Hotel Noga",
+    "type": "accommodation",
+    "category": null,
+    "description": "Hotel offering yoga classes and wellness activities",
+    "location_name": "Zipolite",
+    "lat": 15.6675,
+    "lng": -96.553,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "hotel",
+      "yoga",
+      "wellness"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531518236_nngu3k5l1",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531517686_1761531517686_vi945o.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Hotel Noga"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440007",
+    "name": "Hridaya Yoga",
+    "type": "studio",
+    "category": "wellness",
+    "description": "Yoga studio with Nitya Hall for classes and devotional events",
+    "location_name": "Mazunte",
+    "lat": 15.668,
+    "lng": -96.5545,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "yoga",
+      "meditation",
+      "spirituality",
+      "bhajans"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531527584_7ga9nbq5c",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531527066_1761531527066_oitait.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Hridaya Yoga"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440008",
+    "name": "San Agustinillo",
+    "type": "other",
+    "category": null,
+    "description": "Location for sessions and services.",
+    "location_name": "San Agustinillo",
+    "lat": 15.663,
+    "lng": -96.538,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": "64210661826",
+    "contact_whatsapp": "64210661826",
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "sessions",
+      "wellness",
+      "services"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531516529_nkthmdzdn",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531515832_1761531515832_g486t9.jpg",
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531549452_1761531549452_pnboan.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "San Agustinillo"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440009",
+    "name": "El Delfin Tacos Mazunte",
+    "type": "restaurant",
+    "category": "food",
+    "description": "Taco restaurant",
+    "location_name": "Mazunte",
+    "lat": 15.669,
+    "lng": -96.5505,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": "+52 958 142 6536",
+    "contact_whatsapp": "+52 958 142 6536",
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "tacos",
+      "food delivery",
+      "restaurant"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531530828_vq63499lk",
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Playa Mazunte"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440010",
+    "name": "Meditation Station",
+    "type": "studio",
+    "category": "wellness",
+    "description": "Space for meditation, wellness workshops, and community gatherings.",
+    "location_name": "Mazunte",
+    "lat": 15.6685,
+    "lng": -96.5542,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "meditation",
+      "yoga",
+      "wellness",
+      "community",
+      "classes"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531530411_o92cjjkb7",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531529842_1761531529842_4a2slw.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Meditation Station"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440011",
+    "name": "Kinam Mazunte",
+    "type": "venue",
+    "category": "wellness",
+    "description": "Venue for workshops and events",
+    "location_name": "al lado de Posada la Huerta, Camino Al Alguaje S/N, Mazunte, Oaxaca",
+    "lat": 15.667,
+    "lng": -96.5545,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "workshops",
+      "events",
+      "venue"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531529723_h106i508y",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531528982_1761531528982_l53nso.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Kinam"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440012",
+    "name": "Mermejita Beach",
+    "type": "beach",
+    "category": null,
+    "description": "Beach in Mazunte",
+    "location_name": "Mazunte",
+    "lat": 15.66,
+    "lng": -96.565,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "beach",
+      "art",
+      "activities"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531535331_1mtf88cr5",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531534558_1761531534558_il8mnb.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Playa Mermejita"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440013",
+    "name": "Akasha",
+    "type": "studio",
+    "category": "wellness",
+    "description": "Pilates studio",
+    "location_name": "Mazunte",
+    "lat": 15.669,
+    "lng": -96.5505,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "pilates",
+      "fitness",
+      "wellness"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531534248_slpmoe4ce",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531533753_1761531533753_b2o77d.jpg"
+    ],
+    "website_url": "http://wa.me/+529581189598",
+    "_links": [
+      "http://wa.me/+529581189598"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Playa Mazunte"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440014",
+    "name": "La Galera",
+    "type": "venue",
+    "category": null,
+    "description": "Dance venue",
+    "location_name": "Zipolite",
+    "lat": 15.6655,
+    "lng": -96.5215,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "dance",
+      "hip hop",
+      "venue"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531536842_3oy7er1xs",
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "La Galera"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440015",
+    "name": "Wamba",
+    "type": "venue",
+    "category": null,
+    "description": "Dance venue",
+    "location_name": "Mazunte",
+    "lat": 15.6683,
+    "lng": -96.5528,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "dance",
+      "cumbia",
+      "salsa",
+      "venue"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531537936_r9tupvci2",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531537134_1761531537134_cpijds.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Wamba"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440101",
+    "name": "El Chiringuito",
+    "type": "venue",
+    "category": "bar/restaurant",
+    "description": "Venue with sunset views",
+    "location_name": "Mazunte",
+    "lat": 15.6678,
+    "lng": -96.5525,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": "5219581197051",
+    "contact_whatsapp": "5219581197051",
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "sunset",
+      "events",
+      "social"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531539837_1jy35ycbk",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531538692_1761531538692_qgghlv.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "El Chiringuito"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440102",
+    "name": "Hridaya",
+    "type": "studio",
+    "category": "wellness/spiritual center",
+    "description": "Wellness and spiritual center with multiple halls including Nitya hall",
+    "location_name": "Mazunte",
+    "lat": 15.668,
+    "lng": -96.5545,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "yoga",
+      "movement",
+      "wellness",
+      "spirituality",
+      "dance",
+      "events",
+      "community",
+      "healing"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531545142_egyojbpxn",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531544565_1761531544564_gm66nf.jpg",
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531602447_1761531602447_1azgxt.jpg",
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531614494_1761531614494_ko9y9o.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Hridaya Yoga"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440103",
+    "name": "Camp",
+    "type": "venue",
+    "category": "community space",
+    "description": "Community gathering space in Zipolite",
+    "location_name": "Zipolite",
+    "lat": 15.6658,
+    "lng": -96.522,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "events",
+      "gatherings",
+      "community"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531544103_6c9vnmtbr",
+    "website_url": "https://chat.whatsapp.com/KMDlXiNvO7r0xIyi2YrVzP",
+    "_links": [
+      "https://chat.whatsapp.com/KMDlXiNvO7r0xIyi2YrVzP",
+      "http://camp.mx/sss",
+      "https://chat.whatsapp.com/KMDlXiNvO7r0xIyi2YrVzP",
+      "http://camp.mx/sss"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Camp"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440104",
+    "name": "Bliss Haven",
+    "type": "studio",
+    "category": "wellness center",
+    "description": "Wellness studio offering breathwork and other practices",
+    "location_name": "Mazunte",
+    "lat": 15.6675,
+    "lng": -96.5548,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": "31647248603",
+    "contact_whatsapp": "31647248603",
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "breathwork",
+      "wellness",
+      "meditation",
+      "movement",
+      "community"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531545619_imd8pi7pb",
+    "website_url": "https://www.cradlecoaching.nl/en/ademcoaching",
+    "_links": [
+      "https://www.cradlecoaching.nl/en/ademcoaching"
+    ],
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531562270_1761531562270_0osao1.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Bliss Haven"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440101",
+    "name": "Meditation Station / Estación de Meditación",
+    "type": "studio",
+    "category": "wellness",
+    "description": "Meditation and wellness space hosting circles, classes and gatherings",
+    "location_name": "Meditation Station",
+    "lat": 15.6685,
+    "lng": -96.5542,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "meditation",
+      "wellness",
+      "circles",
+      "classes"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531568171_8z5529khl",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531567490_1761531567490_nz0vf5.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Meditation Station"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440102",
+    "name": "Cenzontle",
+    "type": "studio",
+    "category": "art",
+    "description": "Art studio offering classes in watercolor painting and oracle/tarot design",
+    "location_name": "Cenzontle, calle rinconcito",
+    "lat": 15.6682,
+    "lng": -96.5523,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": "5214772804240",
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "art",
+      "painting",
+      "watercolor",
+      "tarot",
+      "oracle"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531572282_rs29x49fc",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531570602_1761531570602_a5ftxv.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Cenzontle"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440103",
+    "name": "Kinam",
+    "type": "accommodation",
+    "category": "community",
+    "description": "Beautiful calm community space with rooms available for rent. 10 minute walk to the beach.",
+    "location_name": "Kinam",
+    "lat": 15.667,
+    "lng": -96.5545,
+    "hours": null,
+    "price_range": "400 MXN per night / 5000 MXN per month",
+    "contact_phone": "+33 7 88 06 06 49",
+    "contact_whatsapp": "+33 7 88 06 06 49",
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "accommodation",
+      "rooms",
+      "community",
+      "beach"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531578603_d1zu220r6",
+    "images": [
+      "https://ddbuvzotcasyanocqcsh.supabase.co/storage/v1/object/public/whatsapp-media/2025/10/26/1761531577322_1761531577322_i3tpgb.jpg"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Kinam"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440105",
+    "name": "Casa Corzo",
+    "type": "venue",
+    "category": "wellness",
+    "description": "Venue hosting yoga classes and wellness events",
+    "location_name": "Casa Corzo",
+    "lat": 15.6682,
+    "lng": -96.5538,
+    "hours": null,
+    "price_range": null,
+    "contact_phone": null,
+    "contact_whatsapp": null,
+    "contact_instagram": null,
+    "contact_email": null,
+    "tags": [
+      "yoga",
+      "wellness",
+      "events"
+    ],
+    "city_id": "mazunte",
+    "verified": false,
+    "original_message_id": "local_1761531609363_10uavrw0g",
+    "website_url": "https://gofund.me/8e3a4dd4e",
+    "_links": [
+      "https://gofund.me/8e3a4dd4e"
+    ],
+    "created_by": "520e75eb-b615-4d9a-a369-b218373c6c05",
+    "_matched_landmark": "Casa Corzo"
+  }
+]
