@@ -38,7 +38,7 @@ function extractPhoneNumber(phone) {
 }
 
 /**
- * Format metadata as readable string
+ * Format metadata as readable string with ALL available info
  * @param {Object} metadata - Message metadata
  * @returns {string} Formatted metadata
  */
@@ -46,12 +46,46 @@ function formatMetadata(metadata) {
   if (!metadata || Object.keys(metadata).length === 0) return '';
 
   const items = [];
-  if (metadata.hasQuotedMessage) items.push('Reply');
-  if (metadata.isForwarded) items.push('Forwarded');
-  if (metadata.mentionedIds?.length > 0) items.push(`Mentions: ${metadata.mentionedIds.length}`);
-  if (metadata.links?.length > 0) items.push(`Links: ${metadata.links.length}`);
 
-  return items.join('; ');
+  // Message Status
+  if (metadata.isForwarded) {
+    const count = metadata.forwardCount ? ` (${metadata.forwardCount}x)` : '';
+    items.push(`Forwarded${count}`);
+  }
+  if (metadata.isStarred) items.push('Starred');
+  if (metadata.isEphemeral) items.push('Ephemeral');
+  if (metadata.isGif) items.push('GIF');
+
+  // ACK Status
+  if (metadata.ackStatus) items.push(`Status: ${metadata.ackStatus}`);
+
+  // Engagement
+  if (metadata.hasQuotedMessage) items.push('Reply');
+  if (metadata.hasReaction) items.push('Has Reactions');
+  if (metadata.mentionCount) items.push(`@${metadata.mentionCount} mentions`);
+  if (metadata.hasGroupMentions) items.push(`Group mentions: ${metadata.groupMentionCount}`);
+
+  // Content
+  if (metadata.linkCount) {
+    const suspicious = metadata.links?.filter(l => l.isSuspicious).length || 0;
+    items.push(`${metadata.linkCount} links${suspicious ? ` (${suspicious} suspicious)` : ''}`);
+  }
+  if (metadata.hasContacts) items.push(`${metadata.contactCount} contacts`);
+  if (metadata.location) items.push('Location');
+  if (metadata.mediaDuration) items.push(`${metadata.mediaDuration}s`);
+
+  // Special Types
+  if (metadata.isPoll) items.push(`Poll: "${metadata.pollName}" (${metadata.pollOptionCount} options)`);
+  if (metadata.isEvent) items.push('Event');
+  if (metadata.hasGroupInvite) items.push('Group Invite');
+  if (metadata.orderId) items.push(`Order: ${metadata.orderId}`);
+  if (metadata.hasButtons) items.push('Interactive Buttons');
+  if (metadata.selectedButton) items.push(`Button: ${metadata.selectedButton}`);
+
+  // Device
+  if (metadata.deviceType) items.push(`Device: ${metadata.deviceType}`);
+
+  return items.join(' | ');
 }
 
 /**
