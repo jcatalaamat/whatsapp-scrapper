@@ -3,22 +3,64 @@
  * Saves WhatsApp messages to local JSON file for testing
  */
 
-import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync, mkdirSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Default output file
-const DEFAULT_OUTPUT_FILE = join(__dirname, '..', 'data', 'messages.json');
+// Session tracking
+let currentSessionFile = null;
+let sessionStartTime = null;
+
+// Default output directory and file
+const DEFAULT_OUTPUT_DIR = join(__dirname, '..', 'data');
+const DEFAULT_OUTPUT_FILE = join(DEFAULT_OUTPUT_DIR, 'messages.json');
 
 /**
- * Get output file path from env or use default
+ * Generate timestamped session filename
+ * @returns {string} Filename with timestamp
+ */
+function generateSessionFilename() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+
+  return `messages_${year}${month}${day}_${hours}${minutes}${seconds}.json`;
+}
+
+/**
+ * Get output file path - creates new session file if USE_SESSION_FILES=true
  * @returns {string} Output file path
  */
 function getOutputPath() {
-  return process.env.LOCAL_OUTPUT_FILE || DEFAULT_OUTPUT_FILE;
+  // Check if we should use session files
+  const useSessionFiles = process.env.USE_SESSION_FILES === 'true';
+
+  if (!useSessionFiles) {
+    // Use single file mode (legacy behavior)
+    return process.env.LOCAL_OUTPUT_FILE || DEFAULT_OUTPUT_FILE;
+  }
+
+  // Session file mode - create new file per session
+  if (!currentSessionFile) {
+    const outputDir = process.env.LOCAL_OUTPUT_FILE
+      ? dirname(process.env.LOCAL_OUTPUT_FILE)
+      : DEFAULT_OUTPUT_DIR;
+
+    const filename = generateSessionFilename();
+    currentSessionFile = join(outputDir, filename);
+    sessionStartTime = new Date();
+
+    console.log(`📁 New session file: ${filename}`);
+  }
+
+  return currentSessionFile;
 }
 
 /**
@@ -141,10 +183,79 @@ export async function exportMessages(filePath) {
   console.log(`📤 Exported ${messages.length} messages to ${filePath}`);
 }
 
+/**
+ * List all session files in the data directory
+ * @returns {Promise<Array>} Array of session file info
+ */
+export async function listSessionFiles() {
+  const dir = DEFAULT_OUTPUT_DIR;
+
+  if (!existsSync(dir)) {
+    return [];
+  }
+
+  try {
+    const files = readdirSync(dir)
+      .filter(f => f.startsWith('messages_') && f.endsWith('.json'))
+      .map(f => {
+        const filePath = join(dir, f);
+        const data = readFileSync(filePath, 'utf-8');
+        const messages = JSON.parse(data);
+
+        // Extract timestamp from filename
+        const match = f.match(/messages_(\d{8})_(\d{6})\.json/);
+        let sessionDate = 'Unknown';
+        if (match) {
+          const dateStr = match[1]; // YYYYMMDD
+          const timeStr = match[2]; // HHMMSS
+          const year = dateStr.substring(0, 4);
+          const month = dateStr.substring(4, 6);
+          const day = dateStr.substring(6, 8);
+          const hours = timeStr.substring(0, 2);
+          const minutes = timeStr.substring(2, 4);
+          const seconds = timeStr.substring(4, 6);
+
+          sessionDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        }
+
+        return {
+          filename: f,
+          path: filePath,
+          sessionDate,
+          messageCount: messages.length,
+        };
+      })
+      .sort((a, b) => b.filename.localeCompare(a.filename)); // Newest first
+
+    return files;
+  } catch (error) {
+    console.error('⚠️  Error listing session files:', error.message);
+    return [];
+  }
+}
+
+/**
+ * Get current session info
+ * @returns {Object|null} Session info or null
+ */
+export function getCurrentSessionInfo() {
+  if (!currentSessionFile) {
+    return null;
+  }
+
+  return {
+    filename: currentSessionFile.split('/').pop(),
+    path: currentSessionFile,
+    startTime: sessionStartTime,
+  };
+}
+
 export default {
   insertMessageLocal,
   getMessageStatsLocal,
   clearLocalMessages,
   getAllMessagesLocal,
   exportMessages,
+  listSessionFiles,
+  getCurrentSessionInfo,
 };
