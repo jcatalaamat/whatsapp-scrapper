@@ -12,6 +12,7 @@
     "local:backfill": "LOCAL_MODE=true BACKFILL_ENABLED=true BACKFILL_ON_STARTUP=true node src/index.js",
     "backfill": "BACKFILL_ENABLED=true BACKFILL_ON_STARTUP=true node src/index.js",
     "export": "node -e \"import('./src/export-csv.js').then(m => m.exportToCSV('./data/export.csv', true))\"",
+    "export:enhanced": "node -e \"import('./src/export-enhanced-csv.js').then(m => m.exportToEnhancedCSV('./data/export-enhanced.csv', true))\"",
     "migrate": "node-pg-migrate",
     "migrate:up": "node-pg-migrate up",
     "migrate:down": "node-pg-migrate down",

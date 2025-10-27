@@ -50,12 +50,13 @@ async function displayMainMenu() {
   console.log('  2. 📚 Start Backfill Mode (fetch old messages first → Supabase, then monitor)');
   console.log('  3. 🧪 Start Local Test Mode (monitor new messages → JSON file)');
   console.log('  4. 📚🧪 Start Local Backfill Mode (fetch old messages → JSON file, then monitor)');
-  console.log('  5. ⚙️  Configure Settings (.env file)');
-  console.log('  6. 📊 View Current Configuration');
-  console.log('  7. ❌ Exit');
+  console.log('  5. 📤 Export Messages to CSV');
+  console.log('  6. ⚙️  Configure Settings (.env file)');
+  console.log('  7. 📊 View Current Configuration');
+  console.log('  8. ❌ Exit');
   console.log('');
 
-  const choice = await ask('Enter your choice (1-7): ');
+  const choice = await ask('Enter your choice (1-8): ');
   return choice;
 }
 
@@ -279,6 +280,49 @@ async function startLocalTestMode() {
 }
 
 /**
+ * Export messages to CSV
+ */
+async function exportMessagesToCSV() {
+  console.log('\n' + '='.repeat(80));
+  console.log('📤 EXPORT MESSAGES TO CSV');
+  console.log('='.repeat(80));
+
+  console.log('\n📁 Choose export source:\n');
+  console.log('  1. Local JSON file (./data/messages.json)');
+  console.log('  2. Supabase database');
+  console.log('');
+
+  const sourceChoice = await ask('Enter your choice (1-2): ');
+  const fromLocal = sourceChoice === '1';
+
+  const source = fromLocal ? 'local JSON file' : 'Supabase database';
+  console.log(`\n✅ Export source: ${source}`);
+
+  const outputFile = './data/export-enhanced.csv';
+  console.log(`💾 Output file: ${outputFile}`);
+
+  const confirm = await ask('\n▶️  Start export now? (yes/no): ');
+
+  if (confirm.toLowerCase() === 'yes') {
+    console.log('\n📤 Exporting...\n');
+
+    try {
+      const { exportToEnhancedCSV } = await import('./export-enhanced-csv.js');
+      await exportToEnhancedCSV(outputFile, fromLocal);
+
+      console.log('\n✅ Export complete!');
+      console.log(`📂 Open file: ${outputFile}\n`);
+    } catch (error) {
+      console.error('\n❌ Export failed:', error.message);
+    }
+
+    await ask('Press Enter to continue...');
+  } else {
+    console.log('\n❌ Export cancelled');
+  }
+}
+
+/**
  * Start local backfill mode
  */
 async function startLocalBackfillMode() {
@@ -351,14 +395,18 @@ export async function runWizard() {
         break;
 
       case '5':
-        await configureSettings();
+        await exportMessagesToCSV();
         break;
 
       case '6':
-        await viewConfiguration();
+        await configureSettings();
         break;
 
       case '7':
+        await viewConfiguration();
+        break;
+
+      case '8':
         console.log('\n👋 Goodbye!\n');
         rl.close();
         running = false;
@@ -366,7 +414,7 @@ export async function runWizard() {
         break;
 
       default:
-        console.log('\n❌ Invalid choice. Please enter 1-7.');
+        console.log('\n❌ Invalid choice. Please enter 1-8.');
     }
   }
 }
