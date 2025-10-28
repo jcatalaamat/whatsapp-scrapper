@@ -111,20 +111,13 @@ export async function handleMessage(message, chat) {
     // Extract metadata
     const metadata = extractMetadata(message);
 
-    // Prepare message data for database
+    // Prepare message data for database (simplified to 6 essential fields)
     const messageData = {
       group_name: groupInfo.groupName,
-      group_id: groupInfo.groupId,
-      sender_name: senderInfo.senderName,
       sender_phone: senderInfo.senderPhone,
       message_body: message.body || null,
-      message_type: mediaData ? mediaData.messageType : 'text',
-      media_url: mediaData ? mediaData.mediaUrl : null,
-      media_mimetype: mediaData ? mediaData.mediaMimetype : null,
       timestamp: new Date(message.timestamp * 1000).toISOString(),
-      approval_status: 'pending',
-      processed: false,
-      metadata: metadata || {},
+      media_url: mediaData ? mediaData.mediaUrl : null,
     };
 
     // Insert into appropriate storage backend

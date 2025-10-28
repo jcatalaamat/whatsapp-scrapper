@@ -121,10 +121,9 @@ export async function insertMessageLocal(messageData) {
   try {
     const messages = loadMessages();
 
-    // Add timestamp and ID
+    // Add ID only (simplified - no created_at)
     const newMessage = {
       id: `local_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      created_at: new Date().toISOString(),
       ...messageData,
     };
 
@@ -147,9 +146,9 @@ export async function getMessageStatsLocal() {
 
   const stats = {
     total: messages.length,
-    pending: messages.filter(m => m.approval_status === 'pending').length,
-    approved: messages.filter(m => m.approval_status === 'approved').length,
-    rejected: messages.filter(m => m.approval_status === 'rejected').length,
+    pending: messages.length, // All messages are now implicitly pending
+    approved: 0,
+    rejected: 0,
   };
 
   return stats;
