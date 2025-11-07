@@ -51,7 +51,7 @@ IMPORTANT RULES:
 4. Be generous - if it MIGHT be relevant, include it
 5. ALWAYS extract sender_phone as primary contact (it's the WhatsApp number of the poster)
 6. Look for names in signatures, contacts, "by X", "organized by X", etc.
-7. Extract dates/times even if informal ("tomorrow", "tonight", "domingo")
+7. Extract dates from explicit statements ("November 9", "9 de noviembre") AND infer from relative terms ("tomorrow", "tonight", "domingo", "next week") BUT ONLY if you can accurately calculate the correct date. Use the message timestamp as reference. If uncertain about the calculation, leave as null for manual review.
 8. Generate UUIDs for all entity IDs
 9. For original_message_id, use the MESSAGE number (e.g., "MESSAGE 1", "MESSAGE 2")
 
@@ -202,7 +202,11 @@ Has Media: ${msg.media_url ? 'Yes' : 'No'}
 ---`;
   }).join('\n\n');
 
-  const userPrompt = `Extract all events, places, and services from these ${messages.length} WhatsApp messages:
+  const userPrompt = `Extract all events, places, and services from these ${messages.length} WhatsApp messages.
+
+IMPORTANT: When inferring dates from relative terms like "domingo" (Sunday), "mañana" (tomorrow), etc., you MUST calculate the actual day of the week correctly. For example:
+- If message timestamp is "2025-11-06" (Thursday) and message says "este domingo" → the event date should be "2025-11-09" (the next Sunday), NOT "2025-11-06"
+- If unsure about the correct date calculation, leave the date as null
 
 ${messagesText}
 

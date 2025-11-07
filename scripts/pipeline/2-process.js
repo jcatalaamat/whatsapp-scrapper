@@ -11,7 +11,7 @@ dotenv.config();
 const CONFIG = {
   EXTRACTED_DIR: './data/extracted',
   FINAL_DIR: './data/final',
-  RAW_DIR: './data/raw',
+  RAW_DIR: './data', // Changed from './data/raw' to match backfill output
   PROFILE_ID: process.env.SYSTEM_PROFILE_ID || '520e75eb-b615-4d9a-a369-b218373c6c05',
   LANDMARKS_FILE: './data/outputs/Mazunte_Landmarks_Google_API.json'
 };
@@ -55,7 +55,7 @@ function loadMessages() {
     .reverse();
 
   if (files.length === 0) {
-    console.log('⚠️  No message files found in data/raw/, skipping media linking');
+    console.log('⚠️  No message files found in data/, skipping media linking');
     return [];
   }
 
@@ -71,34 +71,95 @@ function loadMessages() {
 function linkMediaToEntities(entities, messages) {
   console.log(`\n🔗 Linking media URLs...`);
 
-  // Create media lookup map
-  const mediaMap = new Map();
-  messages.forEach(msg => {
-    if (msg.media_url) {
-      mediaMap.set(msg.id, msg.media_url);
+  // Helper to normalize phone numbers for comparison
+  // Handles Mexican mobile prefix variations (521 vs 52)
+  const normalizePhone = (phone) => {
+    if (!phone) return null;
+    // Remove + prefix and spaces
+    let normalized = phone.replace(/^\+/, '').replace(/\s/g, '');
+    // Handle Mexican mobile: 521... becomes 52...
+    // This allows +52951... to match 521951...
+    if (normalized.startsWith('521')) {
+      normalized = '52' + normalized.substring(3); // Remove the '1' after '52'
     }
-  });
+    return normalized;
+  };
 
-  console.log(`   Found ${mediaMap.size} messages with media`);
+  // Helper to calculate text similarity score
+  const calculateSimilarity = (text1, text2) => {
+    if (!text1 || !text2) return 0;
+    const words1 = text1.toLowerCase().split(/\s+/);
+    const words2 = text2.toLowerCase().split(/\s+/);
+    const commonWords = words1.filter(word => words2.includes(word) && word.length > 3);
+    return commonWords.length;
+  };
 
   let linked = 0;
 
-  // Link media to entities
+  // Link media to entities using contact_whatsapp phone number match
   entities.forEach(entity => {
-    if (!entity.original_message_id) return;
+    // Skip if entity has no contact whatsapp
+    if (!entity.contact_whatsapp) return;
 
-    const mediaUrl = mediaMap.get(entity.original_message_id);
-    if (mediaUrl) {
+    const normalizedEntityPhone = normalizePhone(entity.contact_whatsapp);
+
+    // Find ALL media messages from this sender
+    let mediaMessages = messages.filter(msg =>
+      msg.media_url && normalizePhone(msg.sender_phone) === normalizedEntityPhone
+    );
+
+    // If not found, try alternative: add '1' after country code for Mexican numbers
+    if (mediaMessages.length === 0 && normalizedEntityPhone && normalizedEntityPhone.startsWith('52')) {
+      const alternativePhone = '52' + '1' + normalizedEntityPhone.substring(2);
+      mediaMessages = messages.filter(msg =>
+        msg.media_url && normalizePhone(msg.sender_phone) === alternativePhone
+      );
+    }
+
+    // If we have multiple media messages, try to pick the best match
+    let mediaMsg = null;
+    if (mediaMessages.length > 1) {
+      // Build a text representation of the entity for comparison
+      const entityText = [
+        entity.title,
+        entity.description,
+        entity.name,
+        entity.address
+      ].filter(Boolean).join(' ');
+
+      // Score each media message based on text similarity
+      const scored = mediaMessages.map(msg => ({
+        msg,
+        score: calculateSimilarity(entityText, msg.message_body)
+      }));
+
+      // Sort by score (highest first) and prefer messages with text
+      scored.sort((a, b) => {
+        if (a.score !== b.score) return b.score - a.score;
+        // If scores are equal, prefer messages with text
+        return (b.msg.message_body ? 1 : 0) - (a.msg.message_body ? 1 : 0);
+      });
+
+      mediaMsg = scored[0].msg;
+
+      if (scored[0].score > 0) {
+        console.log(`  📎 Matched "${entity.title || entity.name}" to message with ${scored[0].score} common words`);
+      }
+    } else if (mediaMessages.length === 1) {
+      mediaMsg = mediaMessages[0];
+    }
+
+    if (mediaMsg) {
       // Events use image_url, Places use images array, Services use image_url
       if (entity.name) {
         // It's a place
         entity.images = entity.images || [];
-        if (!entity.images.includes(mediaUrl)) {
-          entity.images.push(mediaUrl);
+        if (!entity.images.includes(mediaMsg.media_url)) {
+          entity.images.push(mediaMsg.media_url);
         }
       } else {
         // It's an event or service
-        entity.image_url = mediaUrl;
+        entity.image_url = mediaMsg.media_url;
       }
       linked++;
     }
