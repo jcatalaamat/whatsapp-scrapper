@@ -1,51 +1,118 @@
-# WhatsApp Listener for Mazunte Connect
+# WhatsApp Event Scraper for Mazunte Connect
 
-Automatically capture events, offerings, and updates from WhatsApp community groups and sync them to your Supabase database.
+Automated system to extract events, places, and services from WhatsApp messages and generate database inserts.
+
+**Last Updated: November 6, 2025**
 
 ---
 
 ## Overview
 
-This service bridges WhatsApp community groups with the [Mazunte Connect](https://mazunteconnect.com) app. It monitors configured WhatsApp groups, captures messages and media, and stores them in Supabase with "pending" approval status for later review.
+This service bridges WhatsApp community groups with the [Mazunte Connect](https://mazunteconnect.com) app. It monitors configured WhatsApp groups, captures messages and media, extracts structured data using AI, and generates database INSERT statements for review and import.
 
-**Problem it solves:** Community events are constantly shared in WhatsApp groups but manually copying them into the app is tedious. This automates the flow: WhatsApp → Supabase → (Admin Review) → App.
+**Problem it solves:** Community events are constantly shared in WhatsApp groups but manually copying them into the app is tedious. This automates the flow: WhatsApp → AI Extraction → Processed Data → SQL → Database.
+
+## Pipeline Architecture
+
+```
+WhatsApp Messages
+    ↓
+1. BACKFILL (yarn wizard backfill local)
+   - Captures messages and media
+   - Stores in data/messages_*.json
+    ↓
+2. EXTRACTION (yarn pipeline:extract)
+   - GPT-4o-mini extracts events/places/services
+   - Outputs to data/extracted/*.json
+    ↓
+3. PROCESSING (yarn pipeline:process)
+   - Links media via phone + text similarity
+   - Deduplicates entries
+   - Adds coordinates from landmarks
+   - Outputs to data/final/*.json
+    ↓
+4. SQL GENERATION (yarn pipeline:sql)
+   - Generates INSERT statements
+   - Outputs to data/final/INSERTS.sql
+    ↓
+Admin reviews and imports to database
+```
 
 ---
 
-## Features
+## Key Features
 
+### Data Collection
 - **Multi-Group Monitoring** - Monitor 3-4 WhatsApp groups simultaneously
 - **Text & Media Capture** - Captures message text, images, videos, and metadata
-- **Supabase Integration** - Stores all data in your existing Supabase database
-- **Media Storage** - Uploads images/videos to Supabase Storage
 - **Session Persistence** - WhatsApp session survives service restarts (no re-scanning QR code)
-- **Approval Workflow** - All messages default to "pending" status for admin review
-- **Keyword Filtering** - Optional filtering for messages containing specific keywords
-- **24/7 Operation** - Runs continuously on Render free tier
+- **Media Storage** - Uploads images/videos to Supabase Storage
+
+### AI Extraction
+- **GPT-4o-mini Integration** - Intelligent entity extraction from conversational messages
+- **Date Inference** - Accurately calculates dates from relative terms ("domingo", "mañana", "next week")
+- **Multi-Language Support** - Handles Spanish and English messages
+- **Contact Extraction** - Captures WhatsApp, Instagram, email, phone contacts
+
+### Smart Media Linking
+- **Phone Number Normalization** - Handles Mexican mobile prefix variations (521 vs 52)
+- **Text Similarity Matching** - When sender has multiple images, picks the one that best matches event description
+- **Fallback Strategies** - Multiple matching strategies ensure maximum image linkage
+
+### Data Quality
+- **Deduplication** - Removes duplicate events/places based on titles
+- **Coordinate Mapping** - Links locations to landmarks from Google API data
+- **Approval Workflow** - All entities default to "pending" status for admin review
 
 ---
 
-## Architecture
+## Recent Improvements (Nov 6, 2025)
 
-```
-WhatsApp Group Message
-    ↓
-whatsapp-web.js captures it
-    ↓
-Extract: sender, body, media, timestamp
-    ↓
-If media exists → Upload to Supabase Storage
-    ↓
-Insert into whatsapp_messages table (status: pending)
-    ↓
-Admin reviews and approves in main app
-```
+### Media Linking Enhancement ✨
+**Problem:** When a sender posted multiple images, the system would grab the first one, which might not match the extracted event.
 
-**Tech Stack:**
-- `whatsapp-web.js` - WhatsApp Web API wrapper
-- `@supabase/supabase-js` - Supabase client
-- `node-pg-migrate` - Database migrations
-- Node.js v18+
+**Solution:**
+- Find ALL media messages from the same phone number
+- Calculate text similarity between event description and each message text
+- Pick the image from the message with the highest similarity score
+- Example: Giuseppe posted 3 images - now "Temazcal - Inipi" event correctly links to the actual Temazcal announcement image, not a random photo
+
+### Phone Number Normalization 📱
+**Problem:** Mexican mobile numbers have variations that prevented matching:
+- Raw data: `5219515097114` (with 1 after country code)
+- GPT extracted: `+529515097114` (without the 1)
+
+**Solution:**
+- Normalize all phone numbers by removing `+` prefix
+- Detect `521` prefix and convert to `52` for comparison
+- Now `5219515097114` matches `+529515097114` automatically
+
+### Date Inference Fix 📅
+**Problem:** GPT was miscalculating relative dates - "domingo" (Sunday) on Thursday Nov 6 was being extracted as Nov 6 instead of Nov 9.
+
+**Solution:**
+- Enhanced prompt with specific examples of correct day-of-week calculations
+- Added emphasis on accuracy vs. just filling in a date
+- Now "Ecstatic Sunday" correctly dated as "2025-11-09" (actual Sunday)
+
+### Database Trigger Management 🔧
+**Problem:** Notification triggers were blocking event inserts because notification tables didn't exist yet.
+
+**Solution:**
+- Created migration structure for future notification system
+- Temporarily disabled triggers with CASCADE to handle dependencies
+- Events can now be inserted without errors
+
+---
+
+## Tech Stack
+
+- **WhatsApp Integration:** `whatsapp-web.js` - WhatsApp Web API wrapper
+- **AI Extraction:** OpenAI GPT-4o-mini via API
+- **Database:** Supabase (PostgreSQL + Storage)
+- **Runtime:** Node.js v18+
+- **Migrations:** `node-pg-migrate`
+- **Data Processing:** Custom pipeline scripts
 
 ---
 
