@@ -15,7 +15,7 @@ const CONFIG = {
   MAX_MESSAGES: null, // Set to limit (e.g., 50), or null for all
   RATE_LIMIT_DELAY: 1000, // ms between batches
   MIN_MESSAGE_LENGTH: 20, // Skip very short messages
-  INPUT_DIR: './data/raw',
+  INPUT_DIR: './data', // Changed from './data/raw' to match backfill output
   OUTPUT_DIR: './data/extracted',
   PROGRESS_FILE: './data/extracted/progress.json'
 };
