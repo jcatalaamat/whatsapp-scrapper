@@ -121,13 +121,8 @@ export async function insertMessageLocal(messageData) {
   try {
     const messages = loadMessages();
 
-    // Add ID only (simplified - no created_at)
-    const newMessage = {
-      id: `local_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-      ...messageData,
-    };
-
-    messages.push(newMessage);
+    // Save message data as-is without adding extra fields
+    messages.push(messageData);
     saveMessages(messages);
 
     console.log(`💾 Message saved locally (${messages.length} total)`);

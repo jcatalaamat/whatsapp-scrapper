@@ -34,15 +34,18 @@ async function getSenderInfo(message) {
       || contact.number
       || 'Unknown';
 
+    // Get the actual phone number from the contact
+    const phoneNumber = contact.number || message.author || message.from;
+
     return {
       senderName: displayName,
-      senderPhone: message.from,
+      senderPhone: phoneNumber,
     };
   } catch (error) {
     console.error('⚠️  Error getting sender info:', error.message);
     return {
       senderName: 'Unknown',
-      senderPhone: message.from,
+      senderPhone: message.author || message.from,
     };
   }
 }
@@ -111,9 +114,9 @@ export async function handleMessage(message, chat) {
     // Extract metadata
     const metadata = extractMetadata(message);
 
-    // Prepare message data for database (simplified to 6 essential fields)
+    // Prepare message data for database (simplified to essential fields only)
     const messageData = {
-      group_name: groupInfo.groupName,
+      sender_name: senderInfo.senderName,
       sender_phone: senderInfo.senderPhone,
       message_body: message.body || null,
       timestamp: new Date(message.timestamp * 1000).toISOString(),
