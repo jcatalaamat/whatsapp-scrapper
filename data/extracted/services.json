@@ -1,8 +1,8 @@
 [
   {
-    "id": "44305b22-37ad-43c1-946a-cfbc89899bbb",
+    "id": "2f91c0ad-e662-4ab4-89ed-e5f3e6a1b544",
     "title": "Myofascial Release Massage",
-    "description": "Full body massage therapy focusing on releasing pain and tension.",
+    "description": "Full body massage therapy focusing on fascia release and emotional trauma.",
     "category": "wellness",
     "price_type": "per-session",
     "price_amount": null,
@@ -14,9 +14,9 @@
     "original_message_id": "MESSAGE 3"
   },
   {
-    "id": "ca3d5b86-5d9b-4499-941c-a529bfc1dde6",
+    "id": "d14e7d72-6d36-4cb8-bfeb-9b8a71c43d68",
     "title": "Myofascial Release Massage",
-    "description": "Full body massage therapy focusing on releasing pain and tension.",
+    "description": "Full body massage therapy focusing on fascia release and emotional trauma.",
     "category": "wellness",
     "price_type": "per-session",
     "price_amount": null,
@@ -28,11 +28,11 @@
     "original_message_id": "MESSAGE 4"
   },
   {
-    "id": "320d0a16-4784-4ca4-bf3d-aff27c6fadec",
+    "id": "ac2c236a-1777-46af-871e-074163c2d735",
     "title": "Recording Studio Services",
     "description": "Recording sessions, instrument classes, DJ classes, and custom sound designs.",
     "category": "music",
-    "price_type": "negotiable",
+    "price_type": null,
     "price_amount": null,
     "price_currency": null,
     "location_name": "Aragon Beach",
@@ -42,9 +42,9 @@
     "original_message_id": "MESSAGE 15"
   },
   {
-    "id": "ed1d5788-f4de-4a9d-bbb0-52ca87fb4581",
+    "id": "ed92f976-2095-4488-bbd5-3b8a5a5436ff",
     "title": "Chiropractic and Massage Therapy",
-    "description": "Chiropractic and massage therapy services with a reopening discount.",
+    "description": "Chiropractic and massage therapy services with a grand reopening discount.",
     "category": "wellness",
     "price_type": "fixed",
     "price_amount": 50,

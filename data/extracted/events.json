@@ -1,6 +1,6 @@
 [
   {
-    "id": "3354925f-fcc9-4fc4-a3c9-8b2e4523eb32",
+    "id": "2e07ae38-956c-4df9-a839-f0a0105b6e7d",
     "title": "Sunset Kundalini Beach Yoga",
     "description": "A gentle, grounding Kundalini Yoga flow to balance the nervous system and reconnect with inner harmony.",
     "date": "2025-11-05",
@@ -16,9 +16,9 @@
     "original_message_id": "MESSAGE 2"
   },
   {
-    "id": "74a6895f-9209-4511-8e54-b692b494699b",
+    "id": "128fa00d-8a73-4af6-ad5f-dbb6e6803df3",
     "title": "Open Jam Sessions",
-    "description": "Join us for an event of music and fun, bring your instruments and your voices to enjoy together.",
+    "description": "Join us for an event of music and Fun, bring your instruments and your voices to enjoy together.",
     "date": "2025-11-06",
     "time": null,
     "location_name": "Yeshúa's",
@@ -32,7 +32,7 @@
     "original_message_id": "MESSAGE 6"
   },
   {
-    "id": "ccf5d09d-7976-45e9-b67e-621db7b47448",
+    "id": "4aca9bb9-97d3-4d7a-bb1f-efc8f56c127b",
     "title": "Masculine Embodiment Circle",
     "description": "A weekly training ground to return to your center through breathwork, movement, meditation, and ritual.",
     "date": "2025-11-06",
@@ -48,25 +48,9 @@
     "original_message_id": "MESSAGE 10"
   },
   {
-    "id": "9be08645-2eec-43ae-a92f-94e53c2b6039",
-    "title": "Temazcal Ceremony",
-    "description": "Ceremony in preparation for the New Fire Lighting Ceremony.",
-    "date": null,
-    "time": null,
-    "location_name": null,
-    "category": "ceremony",
-    "price": null,
-    "organizer_name": "dan landreville",
-    "contact_whatsapp": "5219983982404",
-    "contact_phone": null,
-    "contact_instagram": null,
-    "contact_email": null,
-    "original_message_id": "MESSAGE 13"
-  },
-  {
-    "id": "0812f125-5ef3-4107-a091-dfdc6c549012",
+    "id": "dcb76365-82a5-4c28-a6aa-d8934cc6cb62",
     "title": "Ecstatic Sunday",
-    "description": "A day of various activities including Aguadanza and Ecstatic Dance.",
+    "description": "A day of dance, water play, and community connection.",
     "date": "2025-11-09",
     "time": null,
     "location_name": "Villa Punto de Equilibrio",
@@ -80,7 +64,7 @@
     "original_message_id": "MESSAGE 19"
   },
   {
-    "id": "dddad51b-39ee-428b-aa8c-69cdec36680d",
+    "id": "0eaebc85-b38d-435b-8ef1-76dc61d8c1bf",
     "title": "Singing Circle",
     "description": "An interactive and playful process for people that enjoy singing or have a hard time to sing.",
     "date": "2025-11-06",
@@ -96,7 +80,7 @@
     "original_message_id": "MESSAGE 24"
   },
   {
-    "id": "cac07951-c919-42c0-8957-c3ddd72b60da",
+    "id": "2a9cc339-b856-4ab5-8f6a-73b52a0e73c2",
     "title": "Casino con Causa Premios",
     "description": "Incredible event with fantastic prizes including stays at local accommodations and various services.",
     "date": "2025-11-08",
@@ -112,14 +96,14 @@
     "original_message_id": "MESSAGE 2"
   },
   {
-    "id": "487661b4-cc9d-419f-97ce-cf1fb9744ecf",
-    "title": "Open House at Circo La Galera",
+    "id": "1e689dde-4ecb-4a3e-8aff-7801933c76da",
+    "title": "Open House & Bazaar",
     "description": "Classes by donation and a bazaar of local products, second-hand items, and food.",
     "date": "2025-11-09",
     "time": "11:00:00",
     "location_name": "La Galera, Zipolite",
-    "category": "community",
-    "price": "cooperación sugerida",
+    "category": "market",
+    "price": "Suggested donation",
     "organizer_name": null,
     "contact_whatsapp": null,
     "contact_phone": null,
@@ -128,14 +112,14 @@
     "original_message_id": "MESSAGE 5"
   },
   {
-    "id": "139ae508-63b7-4316-b38d-12131fdb212b",
+    "id": "8bb234ed-5d02-4b60-8f7f-d146ef62da35",
     "title": "Temazcal - Inipi",
     "description": "Sweat lodge experience following Native American tradition, with optional singing circle.",
     "date": "2025-11-06",
     "time": "16:00:00",
     "location_name": "San Agustinillo",
     "category": "ceremony",
-    "price": "donation",
+    "price": "Voluntary donation",
     "organizer_name": "Giuseppe",
     "contact_whatsapp": "+529515097114",
     "contact_phone": null,
@@ -144,7 +128,7 @@
     "original_message_id": "MESSAGE 6"
   },
   {
-    "id": "c7930636-f219-48f8-8f09-d370683d1b52",
+    "id": "1f5a9244-7074-471b-b03e-96f501aa93da",
     "title": "Breathwork Session",
     "description": "Powerful breath journey to reset body, mind, and spirit, falling on a full moon.",
     "date": "2025-11-06",
@@ -153,14 +137,14 @@
     "category": "wellness",
     "price": "200 MXN | 100 MXN for locals",
     "organizer_name": "Amanda",
-    "contact_whatsapp": "46931627766008",
+    "contact_whatsapp": "19175997698",
     "contact_phone": null,
     "contact_instagram": null,
     "contact_email": null,
     "original_message_id": "MESSAGE 18"
   },
   {
-    "id": "e14034f5-a703-40ad-9ae6-6b2438228771",
+    "id": "b665b3a5-b4f5-4055-9d3c-215c8c6b91ae",
     "title": "Aguahara Course",
     "description": "Transformative Aguahara course in Mazunte, covering various modules.",
     "date": null,
@@ -169,16 +153,16 @@
     "category": "education",
     "price": null,
     "organizer_name": "Sandra Morell",
-    "contact_whatsapp": "5219581253870",
+    "contact_whatsapp": "+5295812586756",
     "contact_phone": null,
     "contact_instagram": "@aguadanza",
     "contact_email": "aguadanza@gmail.com",
     "original_message_id": "MESSAGE 11"
   },
   {
-    "id": "47d5a1ec-01cd-408c-ad60-1595f418bed6",
+    "id": "c9f37997-0426-4dda-a708-68a213e22d07",
     "title": "Pilates Flow Class",
-    "description": "Class to burn everything and leave with new energy, working on strength and flexibility.",
+    "description": "Class to burn and rejuvenate with strength and flexibility.",
     "date": "2025-11-07",
     "time": "10:00:00",
     "location_name": "Kinam",

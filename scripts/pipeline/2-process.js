@@ -71,7 +71,7 @@ function loadMessages() {
 function linkMediaToEntities(entities, messages) {
   console.log(`\n🔗 Linking media URLs...`);
 
-  // Helper to normalize phone numbers for comparison
+  // Helper to normalize phone numbers for comparison AND storage
   // Handles Mexican mobile prefix variations (521 vs 52)
   const normalizePhone = (phone) => {
     if (!phone) return null;
@@ -84,6 +84,16 @@ function linkMediaToEntities(entities, messages) {
     }
     return normalized;
   };
+
+  // Normalize all phone numbers in entities
+  entities.forEach(entity => {
+    if (entity.contact_whatsapp) {
+      entity.contact_whatsapp = normalizePhone(entity.contact_whatsapp);
+    }
+    if (entity.contact_phone) {
+      entity.contact_phone = normalizePhone(entity.contact_phone);
+    }
+  });
 
   // Helper to calculate text similarity score
   const calculateSimilarity = (text1, text2) => {
