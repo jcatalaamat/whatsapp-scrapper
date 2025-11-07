@@ -53,7 +53,7 @@ IMPORTANT RULES:
 6. Look for names in signatures, contacts, "by X", "organized by X", etc.
 7. Extract dates/times even if informal ("tomorrow", "tonight", "domingo")
 8. Generate UUIDs for all entity IDs
-9. Include original message_id for reference
+9. For original_message_id, use the MESSAGE number (e.g., "MESSAGE 1", "MESSAGE 2")
 
 ENTITY TYPES:
 
@@ -194,10 +194,9 @@ function delay(ms) {
 async function extractFromMessages(messages) {
   const messagesText = messages.map((msg, idx) => {
     return `MESSAGE ${idx + 1}:
-ID: ${msg.id}
 Date: ${msg.timestamp}
+Sender: ${msg.sender_name || 'Unknown'}
 Sender WhatsApp: ${msg.sender_phone}
-Group: ${msg.group_name}
 Text: ${msg.message_body}
 Has Media: ${msg.media_url ? 'Yes' : 'No'}
 ---`;
